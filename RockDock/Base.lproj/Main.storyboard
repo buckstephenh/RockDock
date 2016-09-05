@@ -40,7 +40,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fO0-2w-kTm" customClass="RatingControl" customModule="RockDock" customModuleProvider="target">
-                                            <frame key="frameInset" minX="97" minY="37" width="110" height="22"/>
+                                            <frame key="frameInset" minX="97" minY="37" width="69" height="13"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
