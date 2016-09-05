@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  FoodTracker
+//  RockDock
 //
 //  Created by Stephen Buck on 8/27/16.
 //  Copyright © 2016 Stephen Buck. All rights reserved.

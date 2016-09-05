@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A838BD0E1D722C00003D8CC4"
-               BuildableName = "FoodTracker.app"
-               BlueprintName = "FoodTracker"
-               ReferencedContainer = "container:FoodTracker.xcodeproj">
+               BuildableName = "RockDock.app"
+               BlueprintName = "RockDock"
+               ReferencedContainer = "container:RockDock.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A838BD221D722C01003D8CC4"
-               BuildableName = "FoodTrackerTests.xctest"
-               BlueprintName = "FoodTrackerTests"
-               ReferencedContainer = "container:FoodTracker.xcodeproj">
+               BuildableName = "RockDockTests.xctest"
+               BlueprintName = "RockDockTests"
+               ReferencedContainer = "container:RockDock.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A838BD0E1D722C00003D8CC4"
-            BuildableName = "FoodTracker.app"
-            BlueprintName = "FoodTracker"
-            ReferencedContainer = "container:FoodTracker.xcodeproj">
+            BuildableName = "RockDock.app"
+            BlueprintName = "RockDock"
+            ReferencedContainer = "container:RockDock.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A838BD0E1D722C00003D8CC4"
-            BuildableName = "FoodTracker.app"
-            BlueprintName = "FoodTracker"
-            ReferencedContainer = "container:FoodTracker.xcodeproj">
+            BuildableName = "RockDock.app"
+            BlueprintName = "RockDock"
+            ReferencedContainer = "container:RockDock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A838BD0E1D722C00003D8CC4"
-            BuildableName = "FoodTracker.app"
-            BlueprintName = "FoodTracker"
-            ReferencedContainer = "container:FoodTracker.xcodeproj">
+            BuildableName = "RockDock.app"
+            BlueprintName = "RockDock"
+            ReferencedContainer = "container:RockDock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -96,6 +96,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "RockDock"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
