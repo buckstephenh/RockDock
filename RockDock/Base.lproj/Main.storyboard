@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ve4-dw-Wd7">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16B2327e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ve4-dw-Wd7">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Your Rocks-->
+        <!--RockDock-->
         <scene sceneID="MSx-r4-kXZ">
             <objects>
                 <tableViewController id="8cI-Zo-Giw" customClass="RockTableViewController" customModule="RockDock" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sTP-66-r4D" id="14R-74-gX9">
-                                    <frame key="frameInset" width="375" height="89"/>
+                                    <frame key="frameInset" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="XGh-5z-nEf">
@@ -59,7 +58,7 @@
                             <outlet property="delegate" destination="8cI-Zo-Giw" id="y7C-nv-xxQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Rocks" id="Fot-3B-qid">
+                    <navigationItem key="navigationItem" title="RockDock" id="Fot-3B-qid">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="h6t-6h-s5y">
                             <connections>
                                 <segue destination="xTm-aC-Hff" kind="presentation" identifier="AddItem" id="uB9-lD-6mV"/>
@@ -83,36 +82,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CC8-6x-mwy">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="XwX-6s-Ect">
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter rock name (actual or pet name)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AmZ-su-MHJ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trade" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlB-gh-cP4">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yf1-3q-fQW">
+                                        <connections>
+                                            <action selector="switchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="sbh-8v-ygM"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Qs3-J9-KZy"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YbG-Ri-QhB">
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="140" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter rock name (actual or pet name)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R00-fS-yoO">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="xQp-B9-LIq"/>
+                                        </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="gUh-J3-Alo">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="y9p-xU-zvM">
                                         <gestureRecognizers/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="gUh-J3-Alo" secondAttribute="height" multiplier="1:1" id="mFA-oy-Vog"/>
-                                        </constraints>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="tvf-5r-hrD" appends="YES" id="ZP6-Vf-qSR"/>
+                                            <outletCollection property="gestureRecognizers" destination="cwY-PM-gkE" appends="YES" id="Z06-5t-nqO"/>
                                         </connections>
                                     </imageView>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="340" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="cq4-qm-fMe" customClass="RatingControl" customModule="RockDock" customModuleProvider="target">
+                                    <view contentMode="center" placeholderIntrinsicWidth="340" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="6UQ-7b-ab5" customClass="RatingControl" customModule="RockDock" customModuleProvider="target">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="1DQ-eH-fCM"/>
+                                            <constraint firstAttribute="height" constant="25" id="6pX-oT-J0O"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="R00-fS-yoO" firstAttribute="leading" secondItem="YbG-Ri-QhB" secondAttribute="leadingMargin" id="Aoi-V2-h92"/>
+                                    <constraint firstItem="6UQ-7b-ab5" firstAttribute="top" secondItem="y9p-xU-zvM" secondAttribute="bottom" constant="12" id="UVd-bW-3NO"/>
+                                    <constraint firstItem="y9p-xU-zvM" firstAttribute="top" secondItem="R00-fS-yoO" secondAttribute="bottom" constant="12" id="WS5-H7-Wfo"/>
+                                    <constraint firstItem="R00-fS-yoO" firstAttribute="trailing" secondItem="YbG-Ri-QhB" secondAttribute="trailingMargin" id="Xhg-ge-O7r"/>
+                                    <constraint firstItem="6UQ-7b-ab5" firstAttribute="trailing" secondItem="YbG-Ri-QhB" secondAttribute="trailingMargin" id="cUC-ny-t8J"/>
+                                    <constraint firstItem="6UQ-7b-ab5" firstAttribute="leading" secondItem="YbG-Ri-QhB" secondAttribute="leadingMargin" id="d66-BR-wg2"/>
+                                    <constraint firstItem="y9p-xU-zvM" firstAttribute="trailing" secondItem="YbG-Ri-QhB" secondAttribute="trailingMargin" id="s3O-zJ-Bak"/>
+                                    <constraint firstItem="y9p-xU-zvM" firstAttribute="leading" secondItem="YbG-Ri-QhB" secondAttribute="leadingMargin" id="yBs-E3-Us0"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="CC8-6x-mwy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="88t-qJ-e16"/>
-                            <constraint firstItem="CC8-6x-mwy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="TYD-YT-IKV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="CC8-6x-mwy" secondAttribute="trailing" constant="6" id="kEF-M0-5lu"/>
+                            <constraint firstItem="XwX-6s-Ect" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1aO-Kr-a5c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YbG-Ri-QhB" secondAttribute="trailing" id="AmG-lY-W1h"/>
+                            <constraint firstItem="XwX-6s-Ect" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="76" id="P7r-SH-pe1"/>
+                            <constraint firstItem="YbG-Ri-QhB" firstAttribute="top" secondItem="XwX-6s-Ect" secondAttribute="bottom" constant="12" id="PeL-Ny-kh0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XwX-6s-Ect" secondAttribute="trailing" id="f1E-H3-f9N"/>
+                            <constraint firstItem="YbG-Ri-QhB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="leb-h0-eMl"/>
+                            <constraint firstItem="XwX-6s-Ect" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nB1-fC-8pH"/>
+                            <constraint firstItem="XwX-6s-Ect" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="w81-f3-C1w"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Rock" id="brm-nQ-Kgs">
@@ -128,17 +159,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="gUh-J3-Alo" id="KVY-iY-KBb"/>
-                        <outlet property="ratingControl" destination="cq4-qm-fMe" id="WrR-Io-KZG"/>
-                        <outlet property="rockName" destination="AmZ-su-MHJ" id="nhi-Q0-bqL"/>
+                        <outlet property="imageView" destination="y9p-xU-zvM" id="jG6-wf-fNI"/>
+                        <outlet property="ratingControl" destination="6UQ-7b-ab5" id="G92-fM-aRv"/>
+                        <outlet property="rockName" destination="R00-fS-yoO" id="Pvj-Ub-wTb"/>
                         <outlet property="saveButton" destination="2oP-aX-dPz" id="hQE-wT-UsQ"/>
+                        <outlet property="tradeLabel" destination="wlB-gh-cP4" id="aZE-Z2-yuV"/>
+                        <outlet property="tradeSwitch" destination="Yf1-3q-fQW" id="SuH-Iq-2YI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="9Ec-Ie-Mae" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer id="tvf-5r-hrD">
+                <tapGestureRecognizer id="cwY-PM-gkE">
                     <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="0c1-zn-ZAs"/>
+                        <segue destination="XqM-oJ-3j3" kind="presentation" identifier="SelectImageInput" id="ccI-eN-mOu"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -180,11 +213,81 @@
             </objects>
             <point key="canvasLocation" x="1084" y="464"/>
         </scene>
+        <!--Image Input Selector View Controller-->
+        <scene sceneID="sUz-Tm-FdY">
+            <objects>
+                <viewController id="XqM-oJ-3j3" customClass="ImageInputSelectorViewController" customModule="RockDock" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="odh-BJ-ktN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gf6-dt-j4e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="center" id="hjx-kD-nvM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalCentering" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="xAs-UI-R0r">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Image Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4l-FD-ql9">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9f-pR-Mcw">
+                                        <state key="normal" title="Camera"/>
+                                        <connections>
+                                            <action selector="cameraSelected:" destination="XqM-oJ-3j3" eventType="touchUpInside" id="wo4-cV-ArD"/>
+                                            <segue destination="jbh-qe-WxX" kind="unwind" unwindAction="unwindToViewRockWithSender:" id="Hci-5b-DJb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59m-Sb-fz0">
+                                        <state key="normal" title="Library"/>
+                                        <connections>
+                                            <action selector="librarySelected:" destination="XqM-oJ-3j3" eventType="touchUpInside" id="jRY-cM-Wi6"/>
+                                            <segue destination="jbh-qe-WxX" kind="unwind" unwindAction="unwindToViewRockWithSender:" id="vXP-hv-SS1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEG-Td-UrB">
+                                        <state key="normal" title="Saved Images"/>
+                                        <connections>
+                                            <action selector="savedImagesSelected:" destination="XqM-oJ-3j3" eventType="touchUpInside" id="cqm-2j-yV4"/>
+                                            <segue destination="jbh-qe-WxX" kind="unwind" unwindAction="unwindToViewRockWithSender:" id="NMv-f8-UBz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjv-Qh-uQF">
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelSelected:" destination="XqM-oJ-3j3" eventType="touchUpInside" id="NAW-Zo-O91"/>
+                                            <segue destination="jbh-qe-WxX" kind="unwind" unwindAction="unwindToViewRockWithSender:" id="OcN-aw-yLH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="xAs-UI-R0r" secondAttribute="trailing" id="0Ri-4z-KUB"/>
+                            <constraint firstItem="xAs-UI-R0r" firstAttribute="leading" secondItem="hjx-kD-nvM" secondAttribute="leadingMargin" id="PwD-rC-gZ5"/>
+                            <constraint firstItem="Gf6-dt-j4e" firstAttribute="top" secondItem="xAs-UI-R0r" secondAttribute="bottom" id="xQl-8b-EXi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="z9W-XC-qjf"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="Q9f-pR-Mcw" id="eVK-YE-k96"/>
+                        <outlet property="libraryButton" destination="59m-Sb-fz0" id="42y-H7-Ngu"/>
+                        <outlet property="savedImagesButton" destination="UEG-Td-UrB" id="r8x-vr-OzA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Qc-X5-9Va" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jbh-qe-WxX" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3205.5999999999999" y="134.48275862068968"/>
+        </scene>
     </scenes>
     <resources>
         <image name="defaultImage" width="285" height="282"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mar-j1-6GO"/>
+        <segue reference="BeD-r8-HrG"/>
     </inferredMetricsTieBreakers>
 </document>

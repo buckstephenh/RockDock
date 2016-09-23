@@ -17,11 +17,13 @@ class Rock: NSObject, NSCoding {
         static let nameKey = "name"
         static let photoKey = "photo"
         static let ratingKey = "rating"
+        static let ownerKey = "owner"
     }
     
     var name: String
     var photo: UIImage?
     var rating: Int
+    var owner: String?
     
     // MARK: Archiving Paths
     
@@ -32,11 +34,14 @@ class Rock: NSObject, NSCoding {
 
 // MARK: Initialization
 
-init?(name: String, photo: UIImage?, rating: Int) {
+    init?(name: String, photo: UIImage?, rating: Int, owner:
+        String?) {
+        
     // Initialize stored properties.
     self.name = name
     self.photo = photo
     self.rating = rating
+    self.owner = owner
     
     super.init()
 
@@ -51,6 +56,7 @@ init?(name: String, photo: UIImage?, rating: Int) {
         aCoder.encode(name, forKey: PropertyKey.nameKey)
         aCoder.encode(photo, forKey: PropertyKey.photoKey)
         aCoder.encode(rating, forKey: PropertyKey.ratingKey)
+        aCoder.encode(owner, forKey: PropertyKey.ownerKey)
     }
         
     required convenience init?(coder aDecoder: NSCoder) {
@@ -61,7 +67,9 @@ init?(name: String, photo: UIImage?, rating: Int) {
         
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.ratingKey)
         
+        let owner = aDecoder.decodeObject(forKey: PropertyKey.ownerKey) as? String
+        
         // Must call designated initializer.
-        self.init(name: name, photo: photo, rating: rating)
+        self.init(name: name, photo: photo, rating: rating, owner: owner)
     }
 }

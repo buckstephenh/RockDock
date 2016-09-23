@@ -26,7 +26,6 @@ class RockTableViewController: UITableViewController {
         } else {
             loadSampleRocks()
         }
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -35,17 +34,24 @@ class RockTableViewController: UITableViewController {
             }
     
     func loadSampleRocks() {
+        
+        let owner = "DD6C5847-76ED-437D-934C-BEA65A6B96DA" //created 9/12/2016
+        
+        for i in 1...1 {
+           
         let photo1 = UIImage(named: "rock1")!
-        let rock1 = Rock(name: "Bumpeee", photo: photo1, rating: 4)!
+            let rock1 = Rock(name: "Bumpeee\(i)", photo: photo1, rating: 4, owner: owner )!
         
         let photo2 = UIImage(named: "rock2")!
-        let rock2 = Rock(name: "Lumpeee", photo: photo2, rating: 5)!
+            let rock2 = Rock(name: "Lumpeee\(i)", photo: photo2, rating: 5, owner: owner)!
         
         let photo3 = UIImage(named: "rock3")!
-        let rock3 = Rock(name: "Sunue", photo: photo3, rating: 3)!
+            let rock3 = Rock(name: "Sunue\(i)", photo: photo3, rating: 3, owner: owner)!
         
         rocks += [rock1, rock2, rock3]
-    }
+        }
+        
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,9 +66,10 @@ class RockTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        print("numberofrowsinsection:\(rocks.count)")
         return rocks.count
     }
+    
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
