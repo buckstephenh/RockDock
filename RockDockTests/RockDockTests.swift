@@ -38,14 +38,14 @@ class RockDockTests: XCTestCase {
     // Tests to confirm that the Rock initializer returns when no name or a negative rating is provided.
     func testRockInitialization() {
         // Success case.
-        let potentialItem = Rock(name: "Newest rock", photo: nil, rating: 5)
+        let potentialItem = Rock(name: "Newest rock", photo: nil, rating: 5, owner: "Me")
         XCTAssertNotNil(potentialItem)
    
         // Failure cases.
-        let noName = Rock(name: "", photo: nil, rating: 0)
+        let noName = Rock(name: "", photo: nil, rating: 0, owner: "Me")
         XCTAssertNil(noName, "Empty name is invalid")
         
-        let badRating = Rock(name: "Really bad rock", photo: nil, rating: -1)
+        let badRating = Rock(name: "Really bad rock", photo: nil, rating: -1, owner: "Me")
         XCTAssertNil(badRating)
 
     }

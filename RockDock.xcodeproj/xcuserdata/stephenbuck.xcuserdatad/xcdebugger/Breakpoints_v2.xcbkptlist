@@ -234,7 +234,7 @@
                   moduleName = "RockDock"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenbuck/Desktop/RockDock/RockDock/RockViewController.swift"
-                  timestampString = "497462976.150061"
+                  timestampString = "497477820.966992"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "554"
@@ -249,7 +249,7 @@
                   moduleName = "RockDock"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenbuck/Desktop/RockDock/RockDock/RockViewController.swift"
-                  timestampString = "497462976.152759"
+                  timestampString = "497477820.969496"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "554"
@@ -650,7 +650,7 @@
                   moduleName = "RockDock"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenbuck/Desktop/RockDock/RockDock/RockViewController.swift"
-                  timestampString = "497462976.183147"
+                  timestampString = "497477820.998194"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "554"
@@ -665,7 +665,7 @@
                   moduleName = "RockDock"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/stephenbuck/Desktop/RockDock/RockDock/RockViewController.swift"
-                  timestampString = "497462976.185789"
+                  timestampString = "497477821.000828"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "554"
@@ -768,6 +768,22 @@
             startingLineNumber = "344"
             endingLineNumber = "344"
             landmarkName = "peripheral(_:didDiscoverCharacteristicsFor:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RockDockTests/RockDockTests.swift"
+            timestampString = "497474497.138469"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "testPerformanceExample()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
