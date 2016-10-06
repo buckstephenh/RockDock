@@ -286,13 +286,14 @@ class RockViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         print("Scanning Stopped")
         
         // Clear the data that we may already have
-        dataToReceive.removeAll()
+        dataToReceive = Data()
         
         //Make sure we get the discovery callbacks
         peripheral.delegate = self
         
         // Search only for services that match our UUID
-        peripheral.discoverServices([tsUUID])
+        //peripheral.discoverServices([tsUUID])
+        peripheral.discoverServices(nil)
         
     }
     
@@ -312,7 +313,9 @@ class RockViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         // Loop through the newly filled peripheral.services array, just in case there's more than one.
         
         for service in peripheral.services! {
-            peripheral.discoverCharacteristics([tcUUID], for: service)
+            //peripheral.discoverCharacteristics([tcUUID], for: service)
+            peripheral.discoverCharacteristics(nil, for: service)
+        
         }
            }
     
@@ -330,9 +333,15 @@ class RockViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         
         //Again we loop through the array, just in case
         for characteristic in service.characteristics!{
+            print(characteristic.uuid.uuidString)
+            print("Found characteristic:\(characteristic)")
+            print("value \(characteristic.value)")
+            print("descriptors \(characteristic.descriptors)")
+            print("properties \(characteristic.properties)")
+            
             
             // And check if it's the right one
-            if (characteristic.uuid == tcUUID){
+            if characteristic.properties.rawValue > 2 {
                
                 // If it is, subscribe to it
                 peripheral.setNotifyValue(true, for: characteristic)
@@ -359,11 +368,11 @@ class RockViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             // We have, so show the data
             // should be a rock
             
-            if let rock = NSKeyedUnarchiver.unarchiveObject(with: dataToReceive) as! Rock? {
-                navigationItem.title = rock.name
-                rockName.text   = rock.name
-                imageView.image = rock.photo
-                ratingControl.rating = rock.rating
+            if let inboundRock = NSKeyedUnarchiver.unarchiveObject(with: dataToReceive) as! Rock? {
+                navigationItem.title = inboundRock.name
+                rockName.text   = inboundRock.name
+                imageView.image = inboundRock.photo
+                ratingControl.rating = inboundRock.rating
                 ratingControl.updateButtonSelectionStates()
             }
             
@@ -376,22 +385,22 @@ class RockViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         }
         
         // Otherwise, just add the data onto what we already have
-        dataToReceive.append(characteristic.value!)
+        dataToReceive.append((characteristic.value)!)
         
-        print("Received: \(stringFromData)")
+        print("peripheral \(peripheral) characteristic \(characteristic) received: \(stringFromData) error: \(error)")
 
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
         
         if error != nil {
-            print("Error changing notification state: \(error)")
+            print("Error changing notification state for peripheral \(peripheral) characteristic \(characteristic) error \(error)")
         }
         
         // Exit if it's not the transfer characteristic
-        if characteristic.uuid == tcUUID {
-            return
-        }
+        //if characteristic.uuid != tcUUID {
+        //    return
+        //}
         
         // Notification has started
         if(characteristic.isNotifying){
@@ -403,7 +412,7 @@ class RockViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
             // so disconnnect from the peripheral
             print("Notification stopped on \(characteristic). Disconnecting")
             
-            centralManager.cancelPeripheralConnection(peripheral)
+            //centralManager.cancelPeripheralConnection(peripheral)
         }
     }
     
@@ -458,19 +467,19 @@ class RockViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     //MARK: Bluetooth Peripheral
     
     func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: Error?) {
-        print("in peripheralManagerDidStartAdvertising with error: \(error)")
+        print("in peripheralManagerDidStartAdvertising \(peripheral)) error: \(error)")
     }
   
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
-        print ("in peripheralManager.didReceiveRead")
+        print ("in peripheralManager.didReceiveRead for peripheral \(peripheral) and request \(request)")
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
-        print ("in peripheralManager.didAdd service error:\(error)")
+        print ("in peripheralManager.didAdd service \(service) error:\(error)")
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
-        print (" in peripheralManager.didReceiveWrite requests")
+        print (" in peripheralManager.didReceiveWrite peripheral \(peripheral) requests \(requests)")
     }
     
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
@@ -504,7 +513,7 @@ class RockViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         //And add it to the peripheral manager
         peripheralManager.add(transferService)
         
-        tradeSwitch.isEnabled = false
+        tradeSwitch.isEnabled = true
         tradeLabel.text = "Trade"
     }
     
@@ -541,11 +550,14 @@ class RockViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
      */
     func sendData(){
         
-        // First up, check if we're meant to be sending an EOM
-        var sendingEOM = false
+        struct SendStatus {
+            static var sendingEOM =  false
+        }
+        
         var didSend: Bool
         
-        if sendingEOM {
+        // First up, check if we're meant to be sending an EOM
+        if SendStatus.sendingEOM {
         //send it
         didSend = peripheralManager.updateValue("EOM".data(using: .utf8)!, for: transferCharacteristic, onSubscribedCentrals: nil)
     
@@ -553,7 +565,7 @@ class RockViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         if (didSend) {
             
             // It did, so mark it as sent
-            sendingEOM = false
+            SendStatus.sendingEOM = false
             
             NSLog("sent: EOM")
         }
@@ -611,14 +623,14 @@ class RockViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
                 // It was - end an EOM
                 
                 // Set this so if the send fails, we'll send it next time
-                sendingEOM = true
+                SendStatus.sendingEOM = true
                 
                 // Send it
                 let eomSent = peripheralManager.updateValue("EOM".data(using: .utf8)!, for: transferCharacteristic, onSubscribedCentrals: nil)
                 
                 if(eomSent){
                     // It sent, we're all done
-                    sendingEOM = false;
+                    SendStatus.sendingEOM = false;
                     
                     NSLog("Sent: EOM")
                 }
@@ -641,7 +653,11 @@ class RockViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     /** Start advertising
      */
     
-    
+    func peripheral(_ peripheral: CBPeripheral, didModifyServices invalidatedServices: [CBService]) {
+        print("peripheral \(peripheral) invalidatedServices \(invalidatedServices)")
+        cleanup()
+        scan()
+    }
     
         
 }

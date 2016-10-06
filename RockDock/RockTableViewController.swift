@@ -66,7 +66,7 @@ class RockTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("numberofrowsinsection:\(rocks.count)")
+        //print("numberofrowsinsection:\(rocks.count)")
         return rocks.count
     }
     
@@ -89,8 +89,8 @@ class RockTableViewController: UITableViewController {
         cell.photoImageView.image = rock.photo
         cell.ratingControl.rating = rock.rating
         cell.ratingControl.updateButtonSelectionStates()
-        print ("rock.rating \(rock.rating)")
-        print ("cell.ratingControl.rating \(cell.ratingControl.rating)")
+        //print ("rock.rating \(rock.rating)")
+        //print ("cell.ratingControl.rating \(cell.ratingControl.rating)")
         return cell
     }
     

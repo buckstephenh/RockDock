@@ -21,7 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>For Person-to-Person rock trading only when to people actively accept a trade</string>
+	<string>For Person-to-Person rock trading when two people actively accept a rock trade by tapping devices</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.education</string>
 	<key>NSCameraUsageDescription</key>
 	<string>To take live photos of rocks</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -30,6 +32,7 @@
 	<array>
 		<string>bluetooth-central</string>
 		<string>bluetooth-peripheral</string>
+		<string></string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

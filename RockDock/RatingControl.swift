@@ -14,7 +14,7 @@ class RatingControl: UIView {
     
     var rating = 0{
         didSet {
-            print("in call didSet")
+            //print("in call didSet")
             setNeedsLayout()
         }
     }
@@ -37,7 +37,7 @@ class RatingControl: UIView {
         let selectedRock = UIImage(named: "selectedRock")
         let unselectedRock = UIImage(named: "unselectedRock")
         for _ in 0..<starCount {
-            print ("RatingControl.init rating: \(rating)")
+            //print ("RatingControl.init rating: \(rating)")
             let button = UIButton(type: UIButtonType.custom)
             button.setImage(unselectedRock, for: .normal)
             button.setImage(selectedRock, for: .selected)
@@ -88,7 +88,7 @@ class RatingControl: UIView {
         for (index, button) in ratingButtons.enumerated() {
             // If the index of a button is less than the rating, that button should be selected.
             button.isSelected = index < rating
-            print("index:\(index)  button.isSelected:\(button.isSelected) rating:\(rating)")
+            //print("index:\(index)  button.isSelected:\(button.isSelected) rating:\(rating)")
         }
     }
     
