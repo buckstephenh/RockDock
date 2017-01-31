@@ -11,6 +11,7 @@
 		A802C6FE1D79B4F000B1C309 /* Rock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802C6FD1D79B4F000B1C309 /* Rock.swift */; };
 		A802C7001D79D42300B1C309 /* RockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802C6FF1D79D42300B1C309 /* RockTableViewCell.swift */; };
 		A802C7021D7A159200B1C309 /* RockTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802C7011D7A159200B1C309 /* RockTableViewController.swift */; };
+		A82C60E21DC12F4B0067130A /* BLECentralData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82C60E11DC12F4B0067130A /* BLECentralData.swift */; };
 		A83245B21D8470A700425013 /* ImageInputSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83245B11D8470A700425013 /* ImageInputSelectorViewController.swift */; };
 		A83245B41D85DDB600425013 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83245B31D85DDB600425013 /* User.swift */; };
 		A83245B61D86F64B00425013 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83245B51D86F64B00425013 /* Utility.swift */; };
@@ -21,6 +22,7 @@
 		A838BD1D1D722C01003D8CC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A838BD1B1D722C01003D8CC4 /* LaunchScreen.storyboard */; };
 		A838BD281D722C01003D8CC4 /* RockDockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A838BD271D722C01003D8CC4 /* RockDockTests.swift */; };
 		A85EC3591D8B386B001B1FE1 /* BTLE_Transfer in Resources */ = {isa = PBXBuildFile; fileRef = A85EC3581D8B386B001B1FE1 /* BTLE_Transfer */; };
+		A874BC471DDDF663006A4484 /* BLETableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A874BC461DDDF663006A4484 /* BLETableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,7 @@
 		A802C6FD1D79B4F000B1C309 /* Rock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rock.swift; sourceTree = "<group>"; };
 		A802C6FF1D79D42300B1C309 /* RockTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RockTableViewCell.swift; sourceTree = "<group>"; };
 		A802C7011D7A159200B1C309 /* RockTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RockTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A82C60E11DC12F4B0067130A /* BLECentralData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLECentralData.swift; sourceTree = "<group>"; };
 		A83245B11D8470A700425013 /* ImageInputSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageInputSelectorViewController.swift; sourceTree = "<group>"; };
 		A83245B31D85DDB600425013 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A83245B51D86F64B00425013 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		A838BD271D722C01003D8CC4 /* RockDockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RockDockTests.swift; sourceTree = "<group>"; };
 		A838BD291D722C01003D8CC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85EC3581D8B386B001B1FE1 /* BTLE_Transfer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BTLE_Transfer; sourceTree = SOURCE_ROOT; };
+		A874BC461DDDF663006A4484 /* BLETableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLETableViewController.swift; sourceTree = "<group>"; };
 		A8DEEE2F1D7DD948007E3735 /* RockDock.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = RockDock.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,17 +100,19 @@
 			isa = PBXGroup;
 			children = (
 				A838BD121D722C00003D8CC4 /* AppDelegate.swift */,
-				A838BD141D722C00003D8CC4 /* RockViewController.swift */,
-				A802C6FB1D78FAD000B1C309 /* RatingControl.swift */,
-				A802C6FD1D79B4F000B1C309 /* Rock.swift */,
-				A83245B31D85DDB600425013 /* User.swift */,
+				A82C60E11DC12F4B0067130A /* BLECentralData.swift */,
+				A874BC461DDDF663006A4484 /* BLETableViewController.swift */,
+				A83245B11D8470A700425013 /* ImageInputSelectorViewController.swift */,
 				A838BD161D722C00003D8CC4 /* Main.storyboard */,
+				A802C6FD1D79B4F000B1C309 /* Rock.swift */,
+				A802C6FB1D78FAD000B1C309 /* RatingControl.swift */,
 				A802C7011D7A159200B1C309 /* RockTableViewController.swift */,
 				A802C6FF1D79D42300B1C309 /* RockTableViewCell.swift */,
+				A838BD141D722C00003D8CC4 /* RockViewController.swift */,
 				A838BD191D722C00003D8CC4 /* Assets.xcassets */,
 				A838BD1B1D722C01003D8CC4 /* LaunchScreen.storyboard */,
 				A838BD1E1D722C01003D8CC4 /* Info.plist */,
-				A83245B11D8470A700425013 /* ImageInputSelectorViewController.swift */,
+				A83245B31D85DDB600425013 /* User.swift */,
 				A83245B51D86F64B00425013 /* Utility.swift */,
 				A85EC3581D8B386B001B1FE1 /* BTLE_Transfer */,
 			);
@@ -244,6 +250,8 @@
 				A83245B61D86F64B00425013 /* Utility.swift in Sources */,
 				A838BD151D722C00003D8CC4 /* RockViewController.swift in Sources */,
 				A802C7021D7A159200B1C309 /* RockTableViewController.swift in Sources */,
+				A82C60E21DC12F4B0067130A /* BLECentralData.swift in Sources */,
+				A874BC471DDDF663006A4484 /* BLETableViewController.swift in Sources */,
 				A83245B41D85DDB600425013 /* User.swift in Sources */,
 				A802C6FC1D78FAD000B1C309 /* RatingControl.swift in Sources */,
 				A802C7001D79D42300B1C309 /* RockTableViewCell.swift in Sources */,
